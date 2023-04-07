@@ -1,0 +1,282 @@
+
+/* 內容區*/
+* {
+    color: #EDF1D6;
+    box-sizing: border-box;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+body {
+    background-color: #EDF1D6;
+    margin: 0;
+}
+main {
+    padding: 20px;
+}
+main::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+header {
+    background-color: #609966;
+    width: 100%;
+    padding: 25px;
+    word-spacing: 40px;
+    display: flex;
+    justify-content: space-around;
+}    
+#selectname li {
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    list-style: none;
+    display: inline-block;
+    font-size: 35px;
+}
+#selectname a:hover {
+    font-size: 35px;
+    color: black;
+    word-spacing: 2px;
+    text-decoration: none;
+}
+aside {
+    background-color: #609966;
+    padding: 20px;
+    margin: 20px 20px 20px 10px;
+    float: left;
+    width: 17%;
+    text-align: center;
+    border-radius: 30px;
+}
+section {
+    border-radius: 30px;
+}
+.title {
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+.about{
+    background-color: #9DC08B;
+    padding: 25px;
+    margin: 20px 10px 20px 15px;
+    float: right;
+    width: 77%;
+    font-size: 20px;
+}
+.skill{
+    background-color: #40513B;
+    padding: 25px;
+    margin: 20px 10px 20px 15px;
+    float: right;
+    width: 77%;
+    font-size: 20px;
+}
+.circle_1{
+    --width: 200px;
+    --percent: 60;
+    --deg: calc(360deg * calc(var(--percent) / 100));
+    width: var(--width);
+    height: var(--width);
+    border-radius: 50%;
+    margin: 0 10% 0 20%;
+    background-image: conic-gradient(rgb(13, 25, 194) var(--deg), #ccc var(--deg));
+    position: relative;
+    float: left;
+}
+.circle-inside_1{
+    --bar-width: 30px;
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #eee;
+    width: calc(var(--width) - var(--bar-width));
+    height: calc(var(--width) - var(--bar-width));
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: black;
+}
+#front-web{
+    float: left;
+    margin: 0 5%;
+}
+.circle_2{
+    --width: 200px;
+    --percent: 60;
+    --deg: calc(360deg * calc(var(--percent) / 100));
+    width: var(--width);
+    height: var(--width);
+    border-radius: 50%;
+    margin: 0 20% 0 5%;
+    background-image: conic-gradient(rgb(13, 25, 194) var(--deg), #ccc var(--deg));
+    position: relative;
+    float: right;
+}
+.circle-inside_2{
+    --bar-width: 30px;
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #eee;
+    width: calc(var(--width) - var(--bar-width));
+    height: calc(var(--width) - var(--bar-width));
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: black;
+}
+#web-design{
+    float: right;
+    margin: 0 5%;
+}
+.programming {
+    background-color: #9DC08B;
+    padding: 25px;
+    margin: 20px 10px 20px 15px;
+    float: right;
+    width: 77%;
+    font-size: 20px;
+}
+.progress {
+    background-color: #ccc;
+    border-radius: 20px;
+    width: 600px;
+    margin: 20px 80px 20px 30px;
+    float: left;
+}
+.progress::after{
+    clear: both;
+}
+.progress-bar {
+    background-color: rgb(184, 163, 30);
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+#white_paragraph1 {
+    height: 50px;
+}
+.experience {
+    background-color: #40513B;
+    padding: 25px;
+    margin: 20px 10px 20px 15px;
+    float: right;
+    width: 77%;
+    font-size: 20px;
+}
+.department_web1 {
+    position: absolute;
+    right: 730px;
+    width: 400px;
+    z-index: 1;
+}
+.department_web2{
+    position: relative;
+    top: 60px;
+    left: 70px;
+    width: 400px;
+    z-index: 0;
+}
+.department_web1:hover, .department_web2:hover {
+    width: 500px;
+    z-index: 2;
+}
+.WordPress {
+    margin: -150px 0px 0px 500px;
+    font-size: 25px;
+}
+.coffee_shop1 {
+    position: absolute;
+    right: 900px;
+    width: 200px;
+    height: 400px;
+    z-index: 3;
+}
+.coffee_shop2 {
+    position: relative;
+    top: 25px;
+    left: 100px;
+    width: 200px;
+    height: 400px;
+    z-index: 2;
+}
+.coffee_shop3 {
+    position: relative;
+    top: 50px;
+    left: -50px;
+    width: 200px;
+    height: 400px;
+    z-index: 1;
+}
+.coffee_shop4 {
+    position: relative;
+    top: 75px;
+    right: 200px;
+    width: 200px;
+    height: 400px;
+    z-index: 0;
+}
+.coffee_shop1:hover, .coffee_shop2:hover, .coffee_shop3:hover, .coffee_shop4:hover {
+    width: 250px;
+    height: 500px;
+    z-index: 4;
+}
+.kotlin_class {
+    margin: -250px 0px 0px 500px;
+    font-size: 25px;
+}
+#white_paragraph2 {
+    height: 150px;
+}
+.work {
+    margin: 15px 50px 50px 50px;
+    font-size: 25px;
+}
+.contests {
+    background-color: #9DC08B;
+    padding: 25px;
+    margin: 20px 10px 20px 15px;
+    float: right;
+    width: 77%;
+    font-size: 20px;
+}
+.badminton {
+    right: 10px;
+    margin: -250px 0px 0px 500px;
+    font-size: 25px;
+}
+.computer_class {
+    right: 10px;
+    margin: -250px 0px 0px 500px;
+    font-size: 25px;
+}
+/* 頁尾*/
+footer {
+    background-color: #609966;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+}
+footer table {
+    padding: 10px 47%;
+}
+.top {
+    background-color: rgb(78, 78, 180);
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    line-height: 50px;
+}
+.top a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
