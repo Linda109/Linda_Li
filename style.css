@@ -1,12 +1,12 @@
 
 /* 內容區*/
 * {
-    color: #EDF1D6;
+    color: #000000;
     box-sizing: border-box;
     font-family: 'Edu NSW ACT Foundation', cursive;
 }
 body {
-    background-color: #EDF1D6;
+    background-color: #EAE4D5;
     margin: 0;
 }
 main {
@@ -18,13 +18,20 @@ main::after {
     display: table;
 }
 header {
-    background-color: #609966;
+    background-color: #EAE4D5;
     width: 100%;
     padding: 25px;
     word-spacing: 40px;
     display: flex;
-    justify-content: space-around;
-}    
+    justify-content: flex-end;
+}
+hr {
+  border: none;
+  height: 2px;
+  background-color: #333;
+  width: 80%;
+  margin: 10px auto;
+}
 #selectname li {
     letter-spacing: 1px;
     word-spacing: 2px;
@@ -34,39 +41,86 @@ header {
 }
 #selectname a:hover {
     font-size: 35px;
-    color: black;
+    color: rgb(123, 123, 123);
     word-spacing: 2px;
     text-decoration: none;
 }
-aside {
-    background-color: #609966;
-    padding: 20px;
-    margin: 20px 20px 20px 10px;
-    float: left;
-    width: 17%;
-    text-align: center;
-    border-radius: 30px;
-}
 section {
+    background-color: #f4f4f4;
     border-radius: 30px;
+    max-width: 80%;
+    margin: 40px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#me {
+    display: flex;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#me img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+.profile-info{
+    flex: 2;
+    padding: 30px;
+    background-color: #ffffff;
+}
+.profile-info h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #222;
+}
+
+.profile-info h2 {
+  font-size: 18px;
+  color: #2a3a83;
+  margin-bottom: 20px;
+}
+
+.profile-info p {
+  font-size: 16px;
+  line-height: 1.6;
 }
 .title {
     font-family: 'Edu NSW ACT Foundation', cursive;
 }
 .about{
-    background-color: #9DC08B;
     padding: 25px;
-    margin: 20px 10px 20px 15px;
-    float: right;
-    width: 77%;
     font-size: 20px;
 }
+.edu-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 30px; /* 控制欄位間距 */
+  text-align: center;
+}
+
+.edu-table td {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  vertical-align: top;
+  width: 50%;
+}
+
+.edu-year {
+  font-size: 18px;
+  color: #555;
+}
+
 .skill{
-    background-color: #40513B;
     padding: 25px;
-    margin: 20px 10px 20px 15px;
-    float: right;
-    width: 77%;
     font-size: 20px;
 }
 .circle_1{
@@ -134,11 +188,7 @@ section {
     margin: 0 5%;
 }
 .programming {
-    background-color: #9DC08B;
     padding: 25px;
-    margin: 20px 10px 20px 15px;
-    float: right;
-    width: 77%;
     font-size: 20px;
 }
 .progress {
@@ -161,11 +211,7 @@ section {
     height: 50px;
 }
 .experience {
-    background-color: #40513B;
     padding: 25px;
-    margin: 20px 10px 20px 15px;
-    float: right;
-    width: 77%;
     font-size: 20px;
 }
 .department_web1 {
@@ -237,11 +283,7 @@ section {
     font-size: 25px;
 }
 .contests {
-    background-color: #9DC08B;
     padding: 25px;
-    margin: 20px 10px 20px 15px;
-    float: right;
-    width: 77%;
     font-size: 20px;
 }
 .badminton {
@@ -256,7 +298,6 @@ section {
 }
 /* 頁尾*/
 footer {
-    background-color: #609966;
     padding: 10px;
     text-align: center;
     margin: 0;
@@ -265,14 +306,14 @@ footer table {
     padding: 10px 47%;
 }
 .top {
-    background-color: rgb(78, 78, 180);
+    background-color: #f7dd95;
     position: fixed;
     right: 20px;
     bottom: 20px;
     text-align: center;
-    width: 50px;
+    width: 70px;
     height: 50px;
-    border-radius: 20px;
+    border: 1px solid #000;
     line-height: 50px;
 }
 .top a {
