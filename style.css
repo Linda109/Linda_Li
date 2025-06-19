@@ -9,6 +9,18 @@ body {
     background-color: #EAE4D5;
     margin: 0;
 }
+.mouse-trail-dot {
+    position: fixed; /* 讓點相對於視窗固定 */
+    width: 3px; /* 點的寬度，決定線條粗細 */
+    height: 3px; /* 點的高度 */
+    background-color: rgba(0, 0, 0, 0.8); /* 線條顏色，帶一點透明度 */
+    border-radius: 50%; /* 讓點呈現圓形 */
+    pointer-events: none; /* 避免點阻擋下方的點擊事件 */
+    transform: translate(-50%, -50%); /* 確保點的中心對準滑鼠位置 */
+    opacity: 1; /* 初始完全不透明 */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* 設置過渡效果，讓點慢慢消失和縮小 */
+    z-index: 9999; /* 確保線條在其他內容之上 */
+}
 main {
     padding: 20px;
 }
@@ -52,14 +64,13 @@ section {
     margin: 20px auto;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0.3,0,0.3);
 }
 #me {
     display: flex;
     background-color: #f4f4f4;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 #me img {
     width: 100%;
@@ -186,6 +197,7 @@ footer table {
   font-size: 25px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 #top.show {
