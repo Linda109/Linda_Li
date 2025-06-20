@@ -51,6 +51,26 @@ hr {
     display: inline-block;
     font-size: 35px;
 }
+#selectname a{
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+#selectname a::before{
+    content: '';
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border: 2px solid rgb(123, 123, 123);
+    border-radius: 50%;
+    opacity: 0;
+    transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+    z-index: -1;
+}
+#selectname a:hover::before {
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    opacity: 1;
+}
 #selectname a:hover {
     font-size: 35px;
     color: rgb(123, 123, 123);
