@@ -26,7 +26,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 /* 滑鼠效果*/
 document.addEventListener('mousemove', function(e) {
-    //div容器
+
     const dot = document.createElement('div');
     dot.classList.add('mouse-trail-dot');
     document.body.appendChild(dot);
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const thesisSection = document.querySelector('.Thesis');
     if(eduTableCells.length > 0 ){
         const observerOptions = {
-          root: null, //觀察整個視窗 (viewport)
+          root: null, //觀察整個視窗(viewport)
           rootMargin: '0px',
           threshold: 0.5 //當元素有10%進入視窗時觸發
       };
@@ -90,3 +90,93 @@ document.addEventListener('DOMContentLoaded', () => {
         thesisObserver.observe(thesisSection);
     }
 });
+
+/*投影片效果 */
+let slideIndexes = {
+    "slideshow1": 1,
+    "slideshow2": 1,
+    "slideshow3": 1,
+    "slideshow4": 1
+};
+
+//儲存每個自動播放計時器的ID，以便我們可以控制它們(例如暫停或停止)
+let autoPlayIntervals = {};
+
+//初始化顯示所有投影片容器的第一張投影片，並自動播放
+document.addEventListener('DOMContentLoaded', () => {
+    for (let id in slideIndexes) {
+        showSlides(id, slideIndexes[id]);
+    }
+
+    // 啟動自動播放
+    startAutoSlideshow("slideshow1", 4000);
+    startAutoSlideshow("slideshow2", 5000);
+    startAutoSlideshow("slideshow3", 4500);
+    startAutoSlideshow("slideshow4", 5500);
+});
+/**
+ * 處理投影片的切換（上一張/下一張）
+ * @param {string} slideshowId - 要操作的投影片容器的ID
+ * @param {number} n - 1 表示下一張，-1 表示上一張
+ */
+function plusSlides(slideshowId, n) {
+    slideIndexes[slideshowId] += n;
+    showSlides(slideshowId, slideIndexes[slideshowId]);
+}
+/**
+ * 處理圓點導航，直接跳轉到指定投影片
+ * @param {string} slideshowId - 要操作的投影片容器的ID
+ * @param {number} n - 要跳轉到的投影片索引 (從 1 開始)
+ */
+function currentSlide(slideshowId, n) {
+    slideIndexes[slideshowId] = n;
+    showSlides(slideshowId, slideIndexes[slideshowId]);
+}
+/**
+ * 顯示指定投影片容器的特定投影片
+ * @param {string} slideshowId - 要操作的投影片容器的ID
+ * @param {number} n - 要顯示的投影片索引 (從 1 開始)
+ */
+function showSlides(slideshowId, n) {
+    let i;
+    let slideshowContainer = document.getElementById(slideshowId);
+    if (!slideshowContainer) return; //如果容器不存在，則退出
+
+    let slides = slideshowContainer.getElementsByClassName("mySlides");
+    let dotsContainer = slideshowContainer.querySelector(".dot-container");
+    let dots = dotsContainer ? dotsContainer.getElementsByClassName("dot") : [];
+
+    if (n > slides.length) {
+        slideIndexes[slideshowId] = 1;
+    }
+    if (n < 1) {
+        slideIndexes[slideshowId] = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active1", "");
+    }
+
+    slides[slideIndexes[slideshowId]-1].style.display = "block";
+    if (dots[slideIndexes[slideshowId]-1]) {
+        dots[slideIndexes[slideshowId]-1].className += " active1";
+    }
+}
+/**
+ * 啟動指定投影片容器的自動播放功能
+ * @param {string} slideshowId - 要自動播放的投影片容器的ID
+ * @param {number} intervalTime - 自動切換的時間間隔 (毫秒)
+ */
+function startAutoSlideshow(slideshowId, intervalTime = 3000) {
+    // 如果已經有計時器，先清除，防止重複啟動
+    if (autoPlayIntervals[slideshowId]) {
+        clearInterval(autoPlayIntervals[slideshowId]);
+    }
+    autoPlayIntervals[slideshowId] = setInterval(function() {
+        plusSlides(slideshowId, 1);
+    }, intervalTime);
+}
