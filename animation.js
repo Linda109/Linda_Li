@@ -96,7 +96,8 @@ let slideIndexes = {
     "slideshow1": 1,
     "slideshow2": 1,
     "slideshow3": 1,
-    "slideshow4": 1
+    "slideshow4": 1,
+    "slideshow5": 1,
 };
 
 //儲存每個自動播放計時器的ID，以便我們可以控制它們(例如暫停或停止)
@@ -113,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlideshow("slideshow2", 5000);
     startAutoSlideshow("slideshow3", 4500);
     startAutoSlideshow("slideshow4", 5500);
+    startAutoSlideshow("slideshow5", 5200);
 });
 /**
  * 處理投影片的切換（上一張/下一張）
