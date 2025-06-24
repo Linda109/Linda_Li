@@ -210,9 +210,6 @@ function openFullscreen(imgSrc) {
     }, 10);
 }
 
-/**
- * **關閉全螢幕疊加層**
- */
 function closeFullscreen() {
     const overlay = document.getElementById('fullscreenOverlay');
     overlay.classList.remove('active3');
@@ -222,5 +219,5 @@ function closeFullscreen() {
         overlay.style.display = 'none';
         const fullscreenImage = document.getElementById('fullscreenImage');
         fullscreenImage.src = '';
-    }, 300);// 這裡的時間應與 CSS 的 transition-duration (0.3s) 相匹配
+    }, 300);//這裡的時間應與CSS的transition-duration(0.3s)相匹配
 }

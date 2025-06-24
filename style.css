@@ -509,6 +509,8 @@ footer table {
     }
     .works_table tr{
         display: block;
+        margin-bottom: 50px;
+        border-bottom: #333 solid 1px;
     }
     .works_table td{
         display: block;
