@@ -119,6 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlideshow("slideshow3", 4500);
     startAutoSlideshow("slideshow4", 5500);
     startAutoSlideshow("slideshow5", 5200);
+    //投影片內圖片的點擊事件監聽器，實現放大效果
+    const allSlideImages = document.querySelectorAll('.mySlides img');
+    allSlideImages.forEach(img => {
+        img.addEventListener('click', function() {
+            openFullscreen(this.src); // 點擊圖片時呼叫 openFullscreen 函數
+        });
+    });
 });
 /**
  * 處理投影片的切換（上一張/下一張）
@@ -185,4 +192,35 @@ function startAutoSlideshow(slideshowId, intervalTime = 3000) {
     autoPlayIntervals[slideshowId] = setInterval(function() {
         plusSlides(slideshowId, 1);
     }, intervalTime);
+}
+
+/**
+ * **打開全螢幕疊加層並顯示放大的圖片**
+ * @param {string} imgSrc - 要顯示的圖片的src屬性
+ */
+function openFullscreen(imgSrc) {
+    const overlay = document.getElementById('fullscreenOverlay');
+    const fullscreenImage = document.getElementById('fullscreenImage');
+
+    fullscreenImage.src = imgSrc; // 設定圖片來源
+    overlay.style.display = 'flex'; // 顯示疊加層 (CSS 會讓它居中)
+    // 給予一個小延遲來觸發 CSS 過渡動畫，讓圖片有縮放進來的效果
+    setTimeout(() => {
+        overlay.classList.add('active3');
+    }, 10);
+}
+
+/**
+ * **關閉全螢幕疊加層**
+ */
+function closeFullscreen() {
+    const overlay = document.getElementById('fullscreenOverlay');
+    overlay.classList.remove('active3');
+
+    // 等待動畫完成後再真正隱藏疊加層，避免動畫被截斷
+    setTimeout(() => {
+        overlay.style.display = 'none';
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        fullscreenImage.src = '';
+    }, 300);// 這裡的時間應與 CSS 的 transition-duration (0.3s) 相匹配
 }
