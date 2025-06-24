@@ -14,6 +14,9 @@
     <div class="mouse-trail-dot"></div>
     <!-- header -->
     <header>
+        <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
+        </div>
         <ul id="selectname">
             <li>
                 <a href="#Education" style="text-decoration: none;">Education</a>
@@ -61,18 +64,18 @@
             </div>
 
             <table class="edu-table">
-            <tr>
-                <td>
-                    <h3>應用數學系碩士</h3>
-                    <p>中原大學</p>
-                    <p class="edu-year">2024 - 2025</p>
-                </td>
-                <td>
-                    <h3>應用數學系</h3>
-                    <p>中原大學</p>
-                    <p class="edu-year">2020 - 2024</p>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <h3>應用數學系碩士</h3>
+                        <p>中原大學</p>
+                        <p class="edu-year">2024 - 2025</p>
+                    </td>
+                    <td>
+                        <h3>應用數學系</h3>
+                        <p>中原大學</p>
+                        <p class="edu-year">2020 - 2024</p>
+                    </td>
+                </tr>
             </table>
         </section>
 
@@ -121,7 +124,7 @@
                 <tr>
                     <td><img src="image/367633_linux_tux_icon.png" alt="r_program"></td>
                     <td><img src="image/4691303_mysql_icon.png" alt="r_program"></td>
-                    <td><h2>Octave</h2></td>
+                    <td><div>Octave</div></td>
                     <td></td>
                 </tr>
             </table>
@@ -155,13 +158,6 @@
                 </tr>
                 <tr>
                     <td>
-                        <div class="title_2" style="margin-top: 20px; font-weight: bold;">安卓程設點餐系統</div>
-                        <div class="WordPress">
-                            我和同學對資管系的安卓程式語言這門課很有興趣，而去加選。並在期末合作完成一個點餐系統，這個系統是使用kotlin語言來實現的，並且使用了Android studio來開發。
-                            整個學習過程有點辛苦，因為我還沒學過java，而kotlin 跟java很像，有些概念很相似，所以我們相比其他同學比較需要花時間，但我學得很開心，在這過程中做出一個點菜系統，並將團體討論出的想法及創意付諸在上面,也共同解決bug，這過程讓我感到很有成就感。
-                        </div>
-                    </td>
-                    <td>
                         <div class="slideshow-container" id="slideshow2">
                             <div class="mySlides fade"><img src="image/coffee_shop1.png" alt=""></div>
                             <div class="mySlides fade"><img src="image/coffee_shop2.png" alt=""></div>
@@ -176,6 +172,13 @@
                                 <span class="dot" onclick="currentSlide('slideshow2', 3)"></span>
                                 <span class="dot" onclick="currentSlide('slideshow2', 4)"></span>
                             </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="title_2" style="margin-top: 20px; font-weight: bold;">安卓程設點餐系統</div>
+                        <div class="WordPress">
+                            我和同學對資管系的安卓程式語言這門課很有興趣，而去加選。並在期末合作完成一個點餐系統，這個系統是使用kotlin語言來實現的，並且使用了Android studio來開發。
+                            整個學習過程有點辛苦，因為我還沒學過java，而kotlin 跟java很像，有些概念很相似，所以我們相比其他同學比較需要花時間，但我學得很開心，在這過程中做出一個點菜系統，並將團體討論出的想法及創意付諸在上面,也共同解決bug，這過程讓我感到很有成就感。
                         </div>
                     </td>
                 </tr>
@@ -205,13 +208,6 @@
                 </tr>
                 <tr>
                     <td>
-                        <div class="title_2" style="margin-top: 20px; font-weight: bold;">專題研究: 線上網頁遊戲</div>
-                        <div class="WordPress">
-                            大三時，和同學藉著專題研究這門課，做了一個線上網頁遊戲。該網頁是使用socket.io與node.js套件來實現的，並且使用了html、css、js等語言來製作網頁。
-                            我們添加了房間系統，讓玩家可以和自己的朋友一起玩遊戲，並且可以在遊戲中用打字聊天。
-                        </div>
-                    </td>
-                    <td>
                         <div class="slideshow-container" id="slideshow4">
                             <div class="mySlides fade"><img src="image/WebGame1.png" alt=""></div>
                             <div class="mySlides fade"><img src="image/WebGame2.png" alt=""></div>
@@ -224,6 +220,13 @@
                                 <span class="dot" onclick="currentSlide('slideshow4', 2)"></span>
                                 <span class="dot" onclick="currentSlide('slideshow4', 3)"></span>
                             </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="title_2" style="margin-top: 20px; font-weight: bold;">專題研究: 線上網頁遊戲</div>
+                        <div class="WordPress">
+                            大三時，和同學藉著專題研究這門課，做了一個線上網頁遊戲。該網頁是使用socket.io與node.js套件來實現的，並且使用了html、css、js等語言來製作網頁。
+                            我們添加了房間系統，讓玩家可以和自己的朋友一起玩遊戲，並且可以在遊戲中用打字聊天。
                         </div>
                     </td>
                 </tr>
@@ -258,14 +261,24 @@
             <div class="title_1" id='Experience'>
                 <div>Experience</div>
             </div>
-            <img src="image/badminton.jpg" alt="系羽聚餐" width="400px" height="250px" style="margin: 20px;">
-            <div>
-                在一年級時有加入過系上羽毛球，也有一起參加過校內校外的比賽，而這張是校外比完賽後的照片，雖然最後沒有得獎，但這是我跟同伴們一起努力地過程。
-            </div>
-            <img src="image/computer.jpg" alt="系上電腦教室" width="400px" height="250px" style="margin: 20px;">
-            <div>
-                在一年級時有加入系電，這個社團主要是由學長姐教導學弟妹，讓同學更加了解程式語言的知識及實作，由於自己本身在升大學前沒學習過程式語言，怕自己跟不上之後的課程，剛好系上有這個社團，在經過自身情況評估後，決定參加此社團，也在此社團學到並了解到程式語言，在之後遇到不一樣的程式語言結構後，在掌握上就更加清楚且快速。
-            </div>
+            <table class="exp_table">
+                <tr>
+                    <td><img src="image/badminton.jpg" alt="系羽聚餐"></td>
+                    <td>
+                        <div>
+                            在一年級時有加入過系上羽毛球，也有一起參加過校內校外的比賽，而這張是校外比完賽後的照片，雖然最後沒有得獎，但這是我跟同伴們一起努力地過程。
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="image/computer.jpg" alt="系上電腦教室"></td>
+                    <td>
+                        <div>
+                            在一年級時有加入系電，這個社團主要是由學長姐教導學弟妹，讓同學更加了解程式語言的知識及實作，由於自己本身在升大學前沒學習過程式語言，怕自己跟不上之後的課程，剛好系上有這個社團，在經過自身情況評估後，決定參加此社團，也在此社團學到並了解到程式語言，在之後遇到不一樣的程式語言結構後，在掌握上就更加清楚且快速。
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </section>
     </main>
     <!-- footer -->

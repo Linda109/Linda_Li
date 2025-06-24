@@ -1,3 +1,7 @@
+function toggleMenu() {
+    const menu = document.getElementById('selectname');
+    menu.classList.toggle('active2');
+}
 /* top按鈕*/
 window.onscroll = function () {
   const top = document.getElementById("top");

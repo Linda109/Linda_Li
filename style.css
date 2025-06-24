@@ -34,13 +34,11 @@ header {
     display: flex;
     justify-content: space-around;
 }
-/* 分隔線*/
-hr {
-  border: none;
-  height: 2px;
-  background-color: #333;
-  width: 80%;
-  margin: 10px auto;
+/* 漢堡按鈕樣式 */
+.menu-toggle {
+  display: none;
+  font-size: 40px;
+  cursor: pointer;
 }
 /* 選單按鈕*/
 #selectname li {
@@ -54,6 +52,7 @@ hr {
     overflow: hidden;
     transition: color 0.3s ease;
 }
+
 #selectname a::before{
     content: '';
     transform: translate(-50%, -50%);
@@ -75,6 +74,14 @@ hr {
     color: rgb(123, 123, 123);
     word-spacing: 2px;
     text-decoration: none;
+}
+/* 分隔線*/
+hr {
+  border: none;
+  height: 2px;
+  background-color: #333;
+  width: 80%;
+  margin: 10px auto;
 }
 /* 白色主題區塊*/
 section {
@@ -123,12 +130,12 @@ section {
     object-fit: cover;
     display: block;
 }
-/* 學歷*/
 .profile-info{
     flex: 2;
     padding: 30px 8%;
     background-color: #ffffff;
 }
+/* 學歷*/
 .about{
     padding: 18px;
     font-size: 20px;
@@ -200,7 +207,7 @@ section {
 }
 .skill_table td{
     vertical-align: top;
-    width: 20%;
+    width: 25%;
 }
 .skill_table td img {
     max-width: 100%;
@@ -210,6 +217,11 @@ section {
     margin: 0 auto;
     transition: transform 0.2s ease-out;
     cursor: pointer;
+}
+.skill_table td div{
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 5px;
 }
 @keyframes shake {
     0% { transform: translateX(0); }
@@ -221,7 +233,7 @@ section {
 .skill_table td img:hover{
     animation: shake 0.5s ease-in-out infinite;
 }
-.skill_table td h2:hover{
+.skill_table td div:hover{
     animation: shake 0.5s ease-in-out infinite;
 }
 /* 作品*/
@@ -333,6 +345,14 @@ section {
     padding: 25px;
     font-size: 20px;
 }
+.exp_table td img{
+    width: 400px;
+    height: 250px;
+    margin: 20px;
+}
+.exp_table td div{
+    font-size: 20px;
+}
 
 /* 頁尾*/
 footer {
@@ -364,4 +384,95 @@ footer table {
 }
 #top.show {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    #selectname {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    #selectname.active2 {
+        display: flex;
+    }
+    #selectname li {
+        display: block;
+        font-size: 28px;
+        padding: 10px 20px;
+        width: 100%;
+        border-bottom: #333 solid 1px;
+    }
+
+    #selectname a:hover {
+        font-size: 28px;
+    }
+
+    #selectname a::before {
+        display: none;
+    }
+    #top{
+        width: 50px;
+        font-size: 18px;
+    }
+    section{
+        max-width: 95%;
+        margin: 10px auto;
+    }
+    #me{
+        display: block;
+    }
+    .edu-table{
+        border-spacing: 15px;
+    }
+    .edu-table tr{
+        display: block;
+    }
+    .edu-table td{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .skill_table{
+        border-spacing: 15px;
+    }
+    .skill_table td img{
+        max-height: 70px;
+    }
+    .skill_table td div{
+        font-size: 28px;
+    }
+    .experience{
+        padding: 0px;
+    }
+    .works_table{
+        border-spacing: 15px;
+    }
+    .works_table tr{
+        display: block;
+    }
+    .works_table td{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .exp_table tr{
+        display: block;
+    }
+    .exp_table td{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .exp_table td img{
+        width: 100%;
+        height: auto;
+        margin: 0px;
+    }
 }
