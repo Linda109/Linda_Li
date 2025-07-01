@@ -219,7 +219,7 @@ section {
     cursor: pointer;
 }
 .skill_table td div{
-    font-size: 35px;
+    font-size: 25px;
     font-weight: bold;
     margin-top: 5px;
 }
@@ -497,15 +497,16 @@ footer table {
     }
     .skill_table td img{
         max-height: 70px;
+        max-width: 35px;
     }
     .skill_table td div{
-        font-size: 28px;
+        font-size: 12px;
     }
     .experience{
         padding: 0px;
     }
     .works_table{
-        border-spacing: 15px;
+        border-spacing: 10px;
     }
     .works_table tr{
         display: block;
@@ -539,5 +540,10 @@ footer table {
     #top{
         width: 50px;
         font-size: 18px;
+    }
+}
+@media (max-width: 360px) {
+    .works_table{
+        border-spacing: 0px;
     }
 }
